@@ -1,0 +1,30 @@
+{% layout 'layouts/admin' %}
+{% block content %}
+
+<div class="admin__container">
+    <form action="/admin/reach" method="POST" class="form-default">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <h2 class="default-subtitle">Pessoas sensibilizadas</h2>
+                <div class="form-default__item">
+                    <input type="text" name="pessoas_sensibilizadas" class="form-default__input" placeholder="" value="{{ reach[0].pessoas_sensibilizadas }}">
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <h2 class="default-subtitle">Negócios apoiados</h2>
+                <div class="form-default__item">
+                    <input type="text" name="negocios_apoiados" class="form-default__input" placeholder="" value="{{ reach[0].negocios_apoiados }}">
+                </div>
+            </div>
+            <div class="col-12 col-lg-4">
+                <h2 class="default-subtitle">Projetos realizados</h2>
+                <div class="form-default__item">
+                    <input type="text" name="projetos_realizados" class="form-default__input" placeholder="" value="{{ reach[0].projetos_realizados }}">
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="form-default__button default-button">Salvar</button>
+    </form>
+</div>
+{% endblock %}

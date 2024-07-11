@@ -1,0 +1,45 @@
+{% if apiKey and apiKey != "" %}
+  <input type="hidden" name="api-key" class="js-api-key-value" value="{{ apiKey }}">
+{% endif  %}
+
+<div class="cases">
+  <div class="container">
+      <h3 class="cases__title">Conheça alguns casos de clientes</h3>
+      <div class="cases__content">
+        {% for case in cases %}
+            <div class="cases__content-item {% unless case.image and case.image != "" %}cases__content-item--max{% endunless %}">
+              {% if case.image and case.image != "" %}
+                <div class="cases__item">
+                  <div class="cases__box-image js-open-modal" data-id="{{ case.id }}" data-video="{{ case.video  }}">
+                    {% if case.video and case.video != "" and case.image and case.image != "" %}
+                      <img src="{{ case.image }}" alt="Imagem {{ case.title }}" class="cases__image" width="100%" height="100%" loading="lazy">
+                      <i class="fa-solid fa-circle-play cases__icon-play" ria-hidden="true"></i>
+                    {% else %}
+                      <img src="{{ case.image }}" alt="Imagem {{ case.title }}" class="cases__image" width="100%" height="100%" loading="lazy">
+                    {% endif %}
+                  </div>
+                  {% if case.titulo and case.titulo != "" %}
+                    <span class="cases__title">{{ case.title }}</span>
+                  {% endif %}
+                </div>
+              {% endif %}
+              <div class="cases__item">
+                <span class="cases__subtitle">{{ case.subtitle }}</span>
+                <div class="cases__text">
+                    {{ case.description }}
+                </div>
+                {% if case.link and case.link != "" %}
+                  <a href="{{ case.link }}" target="_blank" class="cases__arrow-container">
+                      <span class="cases__arrow-text">Ver mais</span>
+                      <i class="fa-solid fa-arrow-right cases__arrow"></i>
+                  </a>
+                {% endif %}
+              </div>
+            {% include "elements/modal-cases", case: case %}
+          </div>
+        {% endfor %}
+      </div>
+
+      <div id="videos-container"></div>
+  </div>
+</div>

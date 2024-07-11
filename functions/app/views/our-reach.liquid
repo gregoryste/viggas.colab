@@ -1,0 +1,47 @@
+<div class="our-reach">
+    <div class="our-reach__container container">
+        <div class="our-reach__container-title">
+            <span>Nosso</span>
+            <br>
+            <span>Alcance</span>
+            <img src="/images/nosso-alcance.webp" class="our-reach__image" alt="Nosso Alcance" width="100%" height="100%" loading="lazy">
+        </div>
+
+        {% if reach and reach.size > 0 %}
+            <div class="our-reach__counter-container">
+                <div class="our-reach__counter-item">
+                    <div class="our-reach__counter-item-values">
+                        {% assign sizePerson = reach[0].pessoas_sensibilizadas | size %}
+                        {% for i in (0..sizePerson) limit: sizePerson %}
+                            <span class="our-reach__counter-value js-counter-value" data-count="{{ reach[0].pessoas_sensibilizadas[i] }}">0</span>
+                        {% endfor %}
+                        <span class="our-reach__text-mile">MIL</span>
+                    </div>
+                    <span class="our-reach__text">PESSOAS SENSIBILIZADAS</span>
+                </div>
+
+                <div class="our-reach__counter-item">
+                    <div class="our-reach__counter-item-values">
+                        {% assign sizeBusiness = reach[0].negocios_apoiados | size %}
+                        {% for i in (0..sizeBusiness) limit: sizeBusiness %}
+                            <span class="our-reach__counter-value js-counter-value" data-count="{{ reach[0].negocios_apoiados[i] }}">0</span>
+                        {% endfor %}
+                        <span class="our-reach__text-mile">H</span>
+                    </div>
+                    <span class="our-reach__text our-reach__text-center">Capacitação e Mentoria</span>
+                </div>
+
+                <div class="our-reach__counter-item">
+                    <div class="our-reach__counter-item-values">
+                        {% assign sizeProjects = reach[0].projetos_realizados | size %}
+                        {% for i in (0..sizeProjects) limit: sizeProjects %}
+                            <span class="our-reach__counter-value js-counter-value" data-count="{{ reach[0].projetos_realizados[i] }}">0</span>
+                        {% endfor %}
+                    </div>
+                    <span class="our-reach__text">Projetos e Negócios Apoiados</span>
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+</div>

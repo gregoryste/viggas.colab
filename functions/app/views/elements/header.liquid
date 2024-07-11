@@ -1,0 +1,31 @@
+<header class="header">
+    <div class="header__container container">
+        <div class="header__brand">
+            <a href="/">
+                {% if logo and logo != "" %}
+                    <img src="{{ logo }}" alt="Logo Viggas" width="100%" height="100%" loading="lazy">
+                {% else  %}
+                    <img src="/images/viggas-brand.webp" alt="Logo Viggas" width="100%" height="100%" loading="lazy">
+                {% endif %}
+            </a>
+        </div>
+        <ul class="header__menu">
+            <li class="header__menu-item {% if page == "viggas" %}active{% endif %}">
+                <a href="/viggas" class="header__menu-link">A viggas</a>
+            </li>
+            <li class="header__menu-item {% if page == "products" %}active{% endif %}">
+                <a href="/products" class="header__menu-link">Produtos e Serviços</a>
+            </li>
+            <li class="header__menu-item {% if page == "cases" %}active{% endif %}">
+                <a href="/cases" class="header__menu-link">Casos</a>
+            </li>
+            <li class="header__menu-item">
+                <a href="/#form-contact" class="header__menu-link">Contato</a>
+            </li>
+        </ul>
+        <div class="header__menu-mobile">
+            <img src="/images/menu-bar.webp" class="header__menu-mobile-icon js-menu-mobile" alt="Menu Bar">
+            {% include "elements/menu-mobile" %}
+        </div>
+    </div>
+</header>

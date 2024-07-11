@@ -1,0 +1,14 @@
+{% if response.size != 0 %}
+    <div class="popup-validation__container popup-validation__container--active js-popup-alert {{ response.type  }}">
+        <h1 class="popup-validation__title">{{ response.title  }}</h1>
+        <button class="popup-validation__close js-popup-close">X</button>
+        {% if response.errors.size > 0 %}
+            <ul class="popup-validation__list">
+                {% for error in response.errors %}
+                    <li class="popup-validation__list-item">· {{ error.msg }};</li>
+                {% endfor %}
+            </ul>
+        {% endif  %}
+    </div>
+    <div class="popup-validation__background popup-validation__background--active js-background-popup"></div>
+{% endif  %}

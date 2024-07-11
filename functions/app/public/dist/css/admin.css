@@ -1,0 +1,277 @@
+.main-content {
+    height: 100%
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    max-width: 80%;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
+    row-gap: 20px
+}
+
+.header__link-logo {
+    cursor: pointer
+}
+
+.header__logo {
+    display: block;
+    max-width: 250px
+}
+
+.header__categories {
+    display: flex;
+    align-items: center;
+    column-gap: 16px;
+    flex-wrap: wrap;
+    row-gap: 10px
+}
+
+.header__categories-link,
+.header__categories-link:hover {
+    display: block;
+    background-color: #4e0752;
+    border-radius: 8px;
+    padding: 6px 12px;
+    -webkit-box-shadow: -12px -4px 50px -28px rgba(0, 0, 0, .75);
+    -moz-box-shadow: -12px -4px 50px -28px rgba(0, 0, 0, .75);
+    box-shadow: -12px -4px 50px -28px rgba(0, 0, 0, .75);
+    text-decoration: none
+}
+
+.header__categories-icon {
+    height: 24px;
+    width: 24px;
+    font-size: 24px;
+    display: block;
+    color: #fff;
+    text-align: center
+}
+
+.header__categories-letter {
+    height: 24px;
+    width: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Ostrich - Bold";
+    font-size: 24px;
+    color: #fff
+}
+
+.default-title {
+    color: #00a4c8;
+    font-size: 40px
+}
+
+.admin__container {
+    max-width: 80%;
+    width: 100%;
+    margin: 75px auto 0
+}
+
+.admin__title {
+    text-align: left
+}
+
+.admin__subtitle {
+    font-family: "Ostrich - Bold";
+    color: #fff;
+    font-size: 70px;
+    text-align: left;
+    position: relative;
+    display: block
+}
+
+.form-default__input,
+.form-default__label {
+    font-family: "Coolvetica - Regular";
+    font-size: 16px;
+    color: #00a4c8
+}
+
+table th {
+    color: #00a4c8
+}
+
+.form-default {
+    max-width: 100%;
+    border-radius: 5px;
+    padding: 15px 0
+}
+
+.form-default__item {
+    position: relative;
+    padding-bottom: 20px
+}
+
+.form-default__item--info {
+    display: flex;
+    align-items: center
+}
+
+.form-default__input {
+    width: 100%;
+    background-color: transparent;
+    border-bottom: 2px solid #00a4c8;
+    padding: 12px 0
+}
+
+.form-default__input::placeholder {
+    color: #00a4c8
+}
+
+.form-default__input-upload,
+.form-default__input-upload:hover {
+    background-color: transparent;
+    border: none;
+    padding: 0
+}
+
+.form-default__textarea {
+    resize: none;
+    background-color: transparent;
+    border: 1px solid #00a4c8;
+    width: 100%;
+    border-radius: 5px;
+    color: #00a4c8;
+    padding: 5px
+}
+
+.form-default__container-exp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+.form-default__icon-info {
+    color: #00a4c8;
+    cursor: pointer
+}
+
+.form-default__button {
+    width: 100%;
+    justify-content: center;
+    cursor: pointer
+}
+
+.form-default__form-checkbox {
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0
+}
+
+.form-default__accept-label,
+.form-default__select-label {
+    font-family: Roboto;
+    color: #00a4c8;
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    white-space: nowrap
+}
+
+.form-default__accept-link {
+    font-family: Roboto;
+    color: #e70b76;
+    font-size: 20px
+}
+
+.form-default__accept-input,
+.form-default__select-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0
+}
+
+.form-default__accept-span,
+.form-default__select-span {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: transparent;
+    border: 2px solid #5a5a5a;
+    border-radius: 2px
+}
+
+.form-default__accept-label:checked~.form-default__accept-span,
+.form-default__accept-label:hover .form-default__accept-input~.form-default__accept-span,
+.form-default__select-label:checked~.form-default__select-span,
+.form-default__select-label:hover .form-default__select-input~.form-default__select-span {
+    cursor: pointer
+}
+
+.form-default__accept-input:checked~.form-default__accept-span,
+.form-default__select-input:checked~.form-default__select-span {
+    background-color: #00a4c8;
+    border: 2px solid #00a4c8
+}
+
+.form-default__accept-span:after,
+.form-default__select-span:after {
+    content: "";
+    position: absolute;
+    display: none
+}
+
+.form-default__accept-label .form-default__accept-span:after,
+.form-default__select-label .form-default__select-span:after {
+    left: 5px;
+    top: 2px;
+    width: 7px;
+    height: 11px;
+    border: solid #fff;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg)
+}
+
+.form-default__accept-input:checked~.form-default__accept-span:after,
+.form-default__select-input:checked~.form-default__select-span:after{
+    display: block
+}
+
+.form-default__image {
+    max-width: 80px
+}
+
+.default-subtitle {
+    font-size: 40px
+}
+
+.btn-danger,
+.btn-secondary {
+    width: 100%;
+    margin-bottom: 4px
+}
+
+@media screen and (min-width:992px) {
+    header {
+        flex-direction: row;
+        row-gap: 0
+    }
+
+    .header__categories {
+        flex-wrap: nowrap
+    }
+
+    .default-title {
+        font-size: 70px
+    }
+
+    .btn-danger,
+    .btn-secondary {
+        width: auto;
+        margin-bottom: 0
+    }
+}

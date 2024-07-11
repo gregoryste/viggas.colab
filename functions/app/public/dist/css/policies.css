@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.police-and-terms-of-use {
+    margin-top: 50px;
+    font-family: Jost;
+    font-size: 20px;
+}
+
+.police-and-terms-of-use__title,
+.police-and-terms-of-use__subtitle {
+    font-family: "Ostrich - Bold";
+    font-size: 36px;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.police-and-terms-of-use__subtitle {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.police-and-terms-of-use__box {
+    margin: 45px 0;
+}
+
+.police-and-terms-of-use p {
+    margin-bottom: 20px;
+}
+
+.police-and-terms-of-use p span {
+    font-weight: 700;
+    margin-right: 12px;
+    font-family: "Ostrich - Bold";
+    font-size: 28px;
+}
+
+.police-and-terms-of-use__table {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.police-and-terms-of-use__table-item {
+    display: flex;
+    justify-content: center;
+    border: 1px solid grey;
+    padding: 20px;
+    flex: 1;
+}
+
+.police-and-terms-of-use__browser-container-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+}
+
+.police-and-terms-of-use__browser-image {
+    max-width: 100%;
+    object-fit: contain;
+    margin: 0 auto;
+}
+
+.police-and-terms-of-use__browser-name {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    font-family: "Ostrich - Bold";
+    font-size: 20px;
+    text-align: center;
+    color: black;
+}
+
+

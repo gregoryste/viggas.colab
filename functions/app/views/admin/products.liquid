@@ -1,0 +1,103 @@
+{% layout 'layouts/admin' %}
+{% block content %}
+  <div class="admin__container">
+    <form
+      action="{% if update %}/admin/products-edit/{{ fields.id }}{% else %}/admin/products-add{% endif %}"
+      method="POST"
+      class="form-default">
+      <div class="row">
+        <div class="col-12 col-lg-4">
+          <div class="form-default__item">
+            <input
+              type="text"
+              name="title"
+              class="form-default__input"
+              placeholder="Título: "
+              value="{{ fields.title }}">
+          </div>
+          <div class="form-default__item">
+            <input
+              type="text"
+              name="subtitle"
+              class="form-default__input"
+              placeholder="Subtítulo: "
+              value="{{ fields.subtitle }}">
+          </div>
+          <div class="form-default__item">
+            <div class="form-default__container-exp">
+              <label for="description" class="form-default__label">Descrição:</label>
+            </div>
+            <textarea
+              id="description"
+              name="description"
+              rows="4"
+              cols="50"
+              class="form-default__textarea">{{ fields.description }}</textarea>
+          </div>
+          <div class="form-default__item">
+            <div class="form-default__container-exp">
+              <label for="exp" class="form-default__label">Casos:</label>
+              <i class="fa-solid fa-circle-info form-default__icon-info" title="Separar cada item por `,`"></i>
+            </div>
+            <textarea
+              id="cases"
+              name="cases"
+              rows="4"
+              cols="50"
+              class="form-default__textarea">{{ fields.cases }}</textarea>
+          </div>
+        </div>
+
+        {% if products.products.size > 0 %}
+          <div class="table-viggas table-responsive-md col-12 col-lg-7 offset-lg-1 mt-5 mt-lg-0">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Título</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in products.products %}
+                  <tr>
+                    <th>{{ item.title }}</th>
+                    <td>
+                      <a href="/admin/products-edit/{{ item.id  }}" class="btn btn-secondary">Editar</a>
+                      <a
+                        href="/admin/products-delete/{{ item.id }}"
+                        type="button"
+                        class="btn btn-danger">Excluir</a>
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endif %}
+      <button type="submit" class="form-default__button default-button">
+        {% if update %}
+          Editar
+        {% else %}
+          Salvar
+        {% endif %}
+      </button>
+    </form>
+
+    <form
+      action="/admin/products-text"
+      method="POST"
+      class="form-default">
+      <div class="row">
+        <div class="col-12 mb-3">
+          <h2 class="default-subtitle">Nossos Produtos e Serviços</h2>
+          <textarea id="productsText" name="productsText">
+            {{ products.text.text }}
+          </textarea>
+        </div>
+        <button type="submit" class="form-default__button default-button">Adicionar</button>
+      </div>
+    </form>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,23 @@
+<section class="home" id="home" {% if settings.img_home.size and settings.img_home.size > 0 %} style="background-image: url({{ settings.img_home  }});" {% else %} style="background-image: url('/images/bg-secondary.webp')" {% endif %}>
+    <div class="home__content-image-mobile" {% if settings.img_home.size and settings.img_home.size > 0 %} style="background-image: url({{ settings.img_home  }});" {% else %} style="background-image: url('/images/bg-secondary.webp')" {% endif %}></div>
+    <div class="home__container container">
+        <div class="home__content-are">
+            <span class="default-title home__title home__title-are">Somos</span>
+            <span class="default-title home__title">Base</span>
+            <span class="default-title home__title home__title-are">Somos</span>
+            <span class="default-title home__title">Estrutura</span>
+            <span class="default-title home__title home__title-are">Somos</span>
+            <span class="default-title home__title">Suporte</span>
+            <span class="default-title home__title home__title-are">Somos</span>
+            <img src="/images/viggas-home.webp" class="home__image-viggas" alt="Viggas Logo" width="100%" height="100%" loading="lazy">
+            <div class="home__containter-impact">
+                <div class="home__container-impact-border">
+                    <span class="home__impact-text">para o Impacto Positivo</span>
+                </div>
+            </div>
+        </div>
+        <div class="home__button-transform-container">
+            <a href="/#form-contact" class="home__button-transform">Transforme também</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viggas</title>
+    <script src="/js/plugins/fontawesome.js"></script>
+    <link rel="stylesheet" href="/dist/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="/dist/css/global.css">
+    <link rel="stylesheet" href="/dist/css/admin.css">
+    <!-- JS Tiny -->
+    <script src="https://cdn.tiny.cloud/1/yrxb49q8a0ggnt9cgrknkdkp64bh2xa2hhmob6cxg5g2xep7/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+          selector: 'textarea',
+          plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount linkchecker',
+          toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table | align lineheight | numlist bullist indent outdent | emoticons charmap | removeformat',
+        });
+      </script>
+</head>
+<body>
+    {% include "admin/header" %}
+
+    {% if response and response.size != 0 %}
+        {% include "elements/toast"  %}
+    {% endif %}
+
+    <main role="main" class="main-content">
+        {% block content %} Layout {% endblock %}
+    </main>
+    <footer></footer>
+
+    <!-- JS Intern -->
+    <script type="module" src="/js/showMessageError.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<div class="modal-cases" id="js-modal-case--{{ case.id }}">
+    <div class="modal-cases__container">
+        <div class="modal-cases__actions">
+            <div class="modal-cases__actions-item">
+                <i class="fa-solid fa-close modal-cases__actions-icon js-close-video"></i>
+            </div>
+        </div>
+        {% if case.image and case.image != "" and case.video and case.video != "" %}
+            <div class="modal-cases-teste" data-container-video="{{ case.video }}"></div>
+        {% else %}
+            <div class="cases__box-image">
+                <img src="{{ case.image }}" alt="Imagem {{ case.title }}" class="cases__image" width="100%" height="100%" loading="lazy">
+            </div>
+        {% endif %}
+    </div>
+</div>

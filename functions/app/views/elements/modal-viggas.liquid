@@ -1,0 +1,22 @@
+<div class="js-modal-viggas js-viggas--{{ viggas.id }}">
+    <div class="modal__container">
+        <div class="modal__container-item">
+            <div class="modal__container-image">
+                <img
+                src="{{ viggas.image }}"
+                alt="{{ viggas.name }}"
+                class="modal__image">
+            </div>
+            <h3 class="modal__name">{{ viggas.name }}</h3>
+            <h3 class="modal__function">{{ viggas.function  }}</h3>
+        </div>
+        <div class="modal__container-formation">
+            <span class="modal__title">Experiência</span>
+            {{ viggas.exp }}
+        </div>
+        <div class="modal__container-exp">
+            <span class="modal__title">Formação</span>
+            {{ viggas.formation }}
+        </div>
+    </div>
+</div>

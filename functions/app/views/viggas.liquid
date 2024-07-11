@@ -1,0 +1,31 @@
+<div class="viggas">
+  <div class="container">
+    <h2 class="viggas__title">Quem são as Viggas?</h2>
+    <div class="viggas__carousel  js-persons-viggas">
+      <div class="swiper-wrapper">
+        {% for person in viggas %}
+          <div class="viggas__carousel-item js-active-modal swiper-slide" data-id-modal="{{ person.id }}">
+            <img
+                src="{{ person.image }}"
+                alt="{{ person.name }}"
+                class="viggas__image">
+            <span class="viggas__name-text">{{ person.name }}</span>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="default-style__arrow js-button-next">
+        <img src="/images/icon-arrow-r-partners.webp" class="which-already-built__image" alt="Seta Proximo" width="100%" height="100%" loading="lazy">
+      </div>
+      <div class="default-style__arrow js-button-prev">
+          <img src="/images/icon-arrow-l-partners.webp" class="which-already-built__image" alt="Seta Anterior" width="100%" height="100%" loading="lazy">
+      </div>
+    </div>
+
+    <div class="viggas__modal-viggas-container">
+      {% for person in viggas %}
+        {% include "elements/modal-viggas", viggas: person %}
+      {% endfor %}
+    </div>
+    
+  </div>
+</div>

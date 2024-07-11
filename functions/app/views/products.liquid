@@ -1,0 +1,21 @@
+<div class="products">
+  <div class="container">
+      {% for product in products[0] %}
+         <div class="products__item">
+            <div class="products__content">
+              <h3 class="products__title">{{ product.title }}</h3>
+              <h4 class="products__subtitle">{{ product.subtitle }}</h4>
+              <ul class="products__description">
+                {{ product.description }}
+              </ul>
+              {% if product.cases and product.cases != "" %}
+                  <span class="products__cases">{{ product.cases }}</span>
+              {% endif %}
+            </div>
+            <div class="products__carousel">
+
+            </div>
+         </div>
+      {% endfor %}
+  </div>
+</div>

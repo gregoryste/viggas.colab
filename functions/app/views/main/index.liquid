@@ -1,0 +1,15 @@
+{% layout 'layouts/home' %}
+{% block content %}
+
+  {% if settings.video_home and settings.video_home.size > 0 %}
+    {% include "home-video" %}
+  {% else %}
+    {% include "home" %}
+  {% endif %}
+  {% include "about-us" %}
+  {% include "how-we-act" %}
+  {% include "which-already-built" %}
+  {% include "our-reach" %}
+  {% include "form-contact" %}
+  
+{% endblock %}

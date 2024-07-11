@@ -1,0 +1,73 @@
+{% layout 'layouts/admin' %}
+{% block content %}
+
+<div class="admin__container">
+  <div class="row">
+    <div class="col-12 col-lg-4">
+      <form action="{% if update %}/admin/viggas-edit/{{ fields.id }}{% else %}/admin/viggas{% endif %}" method="POST" class="form-default" enctype="multipart/form-data">
+        <div class="form-default__item">
+          <input type="text" name="name" class="form-default__input" placeholder="Nome: " value="{{ fields.name }}">
+        </div>
+        <div class="form-default__item">
+          <input type="text" name="function" class="form-default__input" placeholder="Função: " value="{{ fields.function }}">
+        </div>
+        <div class="form-default__item">
+          <div class="form-default__container-exp">
+            <label for="img" class="form-default__label">Imagem:</label>
+          </div>
+          <input type="file" name="img" id="img" accept="image/*">
+        </div>
+        {% if fields.img and fields.img != "" %}
+          <div class="form-default__item form-default__container-img">
+              <img src="{{ fields.img  }}" alt="Retrato {{ fields.name }}" class="form-default__image" width="100%" height="100%" loading="lazy">
+          </div>
+        {% endif %}
+
+        <div class="form-default__item">
+          <div class="form-default__container-exp">
+            <label for="formation" class="form-default__label">Formação:</label>
+            <i class="fa-solid fa-circle-info form-default__icon-info" title="Separar cada item por `;`"></i>
+          </div>
+          <textarea id="formation" name="formation" rows="4" cols="50" class="form-default__textarea">{{ fields.formation }}</textarea>
+        </div>
+        <div class="form-default__item">
+          <div class="form-default__container-exp">
+            <label for="exp" class="form-default__label">Experiências:</label>
+            <i class="fa-solid fa-circle-info form-default__icon-info" title="Separar cada item por `;`"></i>
+          </div>
+          <textarea id="exp" name="exp" rows="4" cols="50" class="form-default__textarea">{{ fields.exp }}</textarea>
+        </div>
+        <div class="form-default__item">
+          <input type="text" name="ordem" class="form-default__input" placeholder="Ordem: " value="{{ fields.ordem }}">
+        </div>
+
+        <button type="submit" class="form-default__button default-button">{% if update %} Editar {% else %} Adicionar {% endif %}</button>
+      </form>
+    </div>
+     
+    {% if viggas.size > 0 %}
+      <div class="table-viggas table-responsive-md col-12 col-lg-7 offset-lg-1 mt-5 mt-lg-0">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in viggas %}
+              <tr>
+                <th>{{ item.name }}</th>
+                <td>
+                  <a href="/admin/viggas-edit/{{ item.id  }}" class="btn btn-secondary">Editar</a>
+                  <a href="/admin/viggas-delete/{{ item.id }}" type="button" class="btn btn-danger">Excluir</a>
+                </td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

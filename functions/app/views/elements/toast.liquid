@@ -1,0 +1,15 @@
+<form class="js-form-errors" method="POST">
+    <ul class="toast__list {{ response.type  }}">
+        {% for error in response.errors %}
+                <li class="toast__item js-toast-item">
+                    {{ error.msg }}
+                    <i class="fa-solid fa-xmark toast__close"></i>
+                </li>
+        {% else  %}
+            <li class="toast__item js-toast-item">
+                {{ response.title }}
+                <i class="fa-solid fa-xmark toast__close"></i>
+            </li>
+        {% endfor  %}
+    </ul>
+</form>

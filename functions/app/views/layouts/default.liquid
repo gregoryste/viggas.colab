@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Viggas Co.Lab</title>
+    <link rel="stylesheet" type="text/css"  media="all" href="/dist/css/plugins/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css"  media="all" href="/dist/css/plugins/bootstrap-utilities.min.css">
+    <link rel="stylesheet" type="text/css"  media="all" href="/dist/css/plugins/material-icons.css">
+    <link rel="stylesheet" type="text/css"  media="all" href="/dist/css/plugins/swiper-bundle.min.css">
+    <link rel="stylesheet" type="text/css"  media="all" href="/dist/css/global.css">
+    <link rel="stylesheet" type="text/css"  media="all" href="/dist/css/style.css">
+</head>
+<body>
+    {% include "elements/header" %}
+
+    {% if response.size != 0 %}
+        {% include "elements/toast"  %}
+    {% endif %}
+
+    <main role="main" class="main-content">
+        {% block content %} Layout {% endblock %}
+    </main>
+    
+    {% include "footer" %}
+
+    <!-- Plugins -->
+    <script src="/js/plugins/jquery.min.js"></script>
+    <script src="/js/plugins/swiper-bundle.min.js"></script>
+    <script src="/js/plugins/noframework.waypoints.min.js"></script>
+    <script src="https://kit.fontawesome.com/eec7199e79.js"></script>
+
+    <!-- JS Intern -->
+    <script src="/js/form-contact.js"></script>
+    <script src="/js/carousel.js"></script>
+    <script src="/js/recaptcha.js"></script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="/js/modals.js"></script>
+    <script src="/js/cases.js"></script>
+    <script type="module" src="/js/counter.js"></script>
+    <script type="module" src="/js/showMessageError.js"></script>
+    
+    <!-- JS Recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer ></script>
+    {% if response.modal.active == true %}
+        <script>
+            document.querySelector(".js-learn-more-modal").click();
+        </script>
+    {% endif %}
+</body>
+</html>

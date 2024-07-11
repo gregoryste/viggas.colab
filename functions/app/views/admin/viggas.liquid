@@ -1,0 +1,35 @@
+{% layout 'layouts/admin' %}
+{% block content %}
+  <div class="admin__container">
+    <!-- Formulario Como tudo começou -->
+    <form
+      action="/admin/viggas-page"
+      method="POST"
+      class="form-default mb-5"
+      enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="default-subtitle">Como tudo começou</h2>
+          <textarea id="viggasText" name="viggasText">
+            {{ begin.data[0].text }}
+          </textarea>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-12 mt-3">
+          <h2 class="default-subtitle">Imagem</h2>
+          <div class="form-default__item">
+            <input type="file" name="img-viggas-page" id="img-viggas-page" accept="image/*">
+        </div>
+        {% if begin.img and begin.img != "" %}
+            <div class="form-default__item form-default__container-img">
+                <img src="{{ begin.img }}" alt="Imagem" class="form-default__image" width="100%" height="100%" loading="lazy">
+            </div>
+      {% endif %}
+        </div>
+      </div>
+
+      <button type="submit" class="form-default__button default-button">Salvar</button>
+    </form>
+  </div>
+{% endblock %}

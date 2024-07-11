@@ -1,0 +1,237 @@
+* {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    scroll-behavior: smooth
+}
+
+@font-face {
+    font-family: "Coolvetica - Regular";
+    src: url(/fonts/coolvetica-regular.woff2) format("woff2"), url(/fonts/coolvetica-regular.woff) format("woff");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Coolvetica;
+    src: url(/fonts/coolvetica.woff2) format("woff2"), url(/fonts/coolvetica.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: "Ostrich - Bold";
+    src: url(/fonts/ostrich-bold.woff2) format("woff2"), url(/fonts/ostrich-bold.woff) format("woff");
+    font-weight: 700;
+    font-style: bold
+}
+
+@font-face {
+    font-family: Ostrich;
+    src: url(/fonts/ostrich.woff2) format("woff2"), url(/fonts/ostrich.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: FairProsper;
+    src: url(/fonts/fairprosper.woff2) format("woff2"), url(/fonts/ostrich-bold.woff) format("woff")
+}
+
+@font-face {
+    font-family: "Roboto - Bold";
+    src: url(/fonts/roboto-bold.woff2) format("woff2"), url(/fonts/roboto-bold.woff) format("woff");
+    font-weight: 700;
+    font-style: bold
+}
+
+@font-face {
+    font-family: Roboto;
+    src: url(/fonts/roboto.woff2) format("woff2"), url(/fonts/roboto.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Rotis;
+    src: url(/fonts/rotis.woff2) format("woff2"), url(/fonts/rotis.woff) format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+body,
+html {
+    height: 100%;
+    width: 100%
+}
+
+button,
+input {
+    outline: 0;
+    border: none
+}
+
+img {
+    display: block;
+    max-width: 100%
+}
+
+body {
+    width: 100%;
+    background-color: #00a4c8;
+    overflow-x: hidden
+}
+
+li,
+ul {
+    list-style-type: none
+}
+
+a {
+    text-decoration: none
+}
+
+h1 {
+    font-family: "Ostrich - Bold"
+}
+
+h2 {
+    font-family: FairProsper
+}
+
+.main-content {
+    height: 100%;
+}
+
+.login__container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%
+}
+
+.login__content {
+    background-color: #fff;
+    border-radius: 15px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    padding: 30px 0;
+    text-align: center;
+    -webkit-box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, .02), 0 6.7px 5.3px rgba(0, 0, 0, .03), 0 12.5px 10px rgba(0, 0, 0, .04), 0 22.3px 17.9px rgba(0, 0, 0, .049), 0 41.8px 33.4px rgba(0, 0, 0, .059), 0 100px 80px rgba(0, 0, 0, .07);
+    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, .02), 0 6.7px 5.3px rgba(0, 0, 0, .03), 0 12.5px 10px rgba(0, 0, 0, .04), 0 22.3px 17.9px rgba(0, 0, 0, .049), 0 41.8px 33.4px rgba(0, 0, 0, .059), 0 100px 80px rgba(0, 0, 0, .07)
+}
+
+.login__title {
+    font-size: 60px;
+    color: #403d3b
+}
+
+.login__subtitle {
+    font-size: 45px;
+    color: #00dcc6;
+    margin-top: -22px;
+    margin-left: 40px
+}
+
+.login__form {
+    max-width: 75%;
+    margin: 0 auto
+}
+
+.login__form-item {
+    position: relative;
+    display: block
+}
+
+.login__form-label {
+    display: block;
+    text-align: left;
+    font-family: "Coolvetica - Regular";
+    font-weight: 500;
+    padding: 5px 0;
+    font-size: 16px;
+    pointer-events: none;
+    color: grey
+}
+
+.login__form-input {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 24px;
+    border-bottom: 2px solid grey;
+    color: grey;
+    font-family: "Coolvetica - Regular";
+    font-size: 16px
+}
+
+.login__form-input::-webkit-input-placeholder {
+    color: grey
+}
+
+.login__form-input::-moz-placeholder {
+    color: grey
+}
+
+.login__form-input:-ms-input-placeholder {
+    color: grey
+}
+
+.login__form-input::-ms-input-placeholder {
+    color: grey
+}
+
+.login__form-input::placeholder {
+    color: grey
+}
+
+.login__form-icon {
+    position: absolute;
+    right: 0;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    top: 50%;
+    color: #00dcc6;
+    cursor: pointer
+}
+
+.login__form-submit {
+    font-size: 16px;
+    color: #fff;
+    font-family: "Coolvetica - Regular";
+    background: #00dcc6;
+    width: 100%;
+    padding: 14px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    letter-spacing: 2px;
+    -webkit-transition: .5s;
+    transition: .5s;
+    margin-top: 16px;
+    cursor: pointer
+}
+
+.login__form-submit:hover {
+    background: #00a4c8;
+    text-decoration: none
+}
+
+.fa-solid.js-eye {
+    display: none
+}
+
+@media screen and (min-width:992px) {
+    .login__container {
+        padding: 30px
+    }
+}

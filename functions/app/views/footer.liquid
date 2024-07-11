@@ -1,0 +1,74 @@
+<footer class="footer">
+    <div class="container">
+        <div class="footer__container">
+            <div class="footer__container-selos">
+                {% if logo_footer and logo_footer != "" %}
+                    <img src="{{ logo_footer }}" alt="Logo Rodape" class="footer__image" width="100%" height="100%" loading="lazy">
+                {% else %}
+                    <img src="/images/logo-rodape.webp" alt="Logo Rodape" class="footer__image" width="100%" height="100%" loading="lazy">
+                {% endif %}
+                {% for selo in selos %}
+                    <a href="{% if selo.link != "" %}{{ selo.link  }}{% else %}#{% endif %}">
+                        <img src="{{ selo.image  }}" class="footer__image-selo" alt="Selo" width="100%" height="100%" loading="lazy">
+                    </a>
+                {% endfor %}
+            </div>
+
+            <ul class="footer__list">
+                {% if settings.data[0].email and settings.data[0].email != "" %}
+                    <li class="footer__item">
+                        <a href="mailto:{{ settings.data[0].email }}">{{ settings.data[0].email }}</a>
+                    </li>
+                {% endif  %}
+                {% if settings.data[0].telefone and settings.data[0].telefone != "" %}
+                    <li class="footer__item">
+                        {{ settings.data[0].telefone }}
+                    </li>
+                {% endif %}
+                {% if settings.data[0].local and settings.data[0].local != "" %}
+                    <li class="footer__item">
+                        {{ settings.data[0].local }}
+                    </li>
+                {% endif %}
+                <ul class="footer__list-socials">
+                    {% if settings.data[0].instagram and settings.data[0].instagram != "" %}
+                        <li class="footer__item-socials">
+                            <a href="{{ settings.data[0].instagram }}" target="_blank">
+                                <img src="/images/icon-instagram.webp" alt="Instagram" width="100%" height="100%" loading="lazy">
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if settings.data[0].facebook and settings.data[0].facebook != "" %}
+                        <li class="footer__item-socials">
+                            <a href="{{ settings.data[0].facebook }}" target="_blank">
+                                <img src="/images/icon-facebook.webp" alt="Facebook" width="100%" height="100%" loading="lazy">
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if settings.data[0].linkedin and settings.data[0].linkedin != "" %}
+                        <li class="footer__item-socials">
+                            <a href="{{ settings.data[0].linkedin }}" target="_blank">
+                                <img src="/images/icon-linkedin.webp" alt="Linkedin" width="100%" height="100%" loading="lazy">
+                            </a>
+                        </li>
+                {% endif %}
+                </ul>
+                <li class="footer__item">
+                    VIGGAS Co.Lab Copyright © <script>document.write( new Date().getFullYear() );</script> 
+                </li>
+            </ul>
+            <div class="footer__menu">
+                {% if settings.data[0].checkbox_politica_de_privacidade != "" %}
+                    <a href="/politica-e-privacidade" class="footer__item">
+                        Política de Privacidade
+                    </a>
+                {% endif %}
+                {% if settings.data[0].checkbox_codigo_de_conduta != "" %}
+                    <a href="/termos-de-uso" class="footer__item">
+                        Termos de Uso
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</footer>

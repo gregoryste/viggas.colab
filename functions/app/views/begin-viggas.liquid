@@ -1,0 +1,17 @@
+<div class="begin">
+  <div class="container">
+    <div class="begin__box">
+      <h2 class="begin__title">
+        <span>COMO TUDO Começou?</span>
+      </h2>
+      <div class="begin__content">
+        <div class="begin__text">{{ begin.data[0].text }}</div>
+        {% if begin.img and begin.img != "" %}
+          <div class="begin__img-container">
+              <img src="{{ begin.img  }}" alt="Imagem" class="begin__img" width="100%" height="100%" loading="lazy">
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="form-contact" id="form-contact">
+    <div class="container">
+
+        <a href="/#home" class="form-contact__icon-link">
+            <img src="/images/icon-arrow-up.webp" class="form-contact__icon-image" alt="Icone Sobe" width="100%" height="100%" loading="lazy">
+        </a>
+
+        <p class="form-contact__introduction-text">
+            Acreditamos que Pessoas e Organizações são atores fundamentais, que devem ser parte da <span>transformação
+                socioambiental</span> que precisamos e queremos no mundo!
+        </p>
+
+        <div class="form-contact__container">
+            <div class="form-contact__content-text">
+                <p class="form-contact__text">
+                    Quer construir um mundo com mais <span>Impacto Positivo</span> e não sabe como?
+                </p>
+                <p class="form-contact__text">
+                    Entre em contato para a VIGGAS Co.Lab ajudar nessa construção!
+                </p>
+            </div>
+
+            <form action="/add-contact" method="POST" class="form-contact__form js-form-contact">
+
+                <div class="form-contact__field-item js-field-item">
+                    <input type="text" name="name" class="form-contact__field-input js-name" placeholder="Nome"
+                        value="{{ fields.name }}" required>
+                </div>
+                <div class="form-contact__field-item">
+                    <input type="text" name="org" class="form-contact__field-input" placeholder="Organização"
+                        value="{{ fields.org }}">
+                </div>
+                <div class="form-contact__field-item js-field-item">
+                    <input type="email" name="email" class="form-contact__field-input js-email" placeholder="E-mail"
+                        value="{{ fields.email }}" required>
+                </div>
+                <div class="form-contact__field-item">
+                    <input type="number" name="telefone" class="form-contact__field-input" placeholder="Telefone"
+                        value="{{ fields.telefone }}">
+                </div>
+                <div class="form-contact__field-item">
+                    <textarea name="mensagem" id="mensagem" class="form-contact__field-textarea" rows="4" placeholder="Digite sua mensagem..."></textarea>
+                </div>
+                <div class="form-contact__form-checkbox">
+                    <label class="form-contact__accept-label">
+                        Aceito a <a href="/politica-e-privacidade" class="form-contact__accept-link" target="_blank">política de privacidade</a>
+                        <input type="checkbox" name="checkbox_lgpd" class="form-contact__accept-input js-input-lgpd"
+                            {% if fields.checkbox_lgpd %}checked{% endif %}>
+                        <span class="form-contact__accept-span"></span>
+                    </label>
+                </div>
+                <div class="form-contact__container-button">
+                    <button type="button" class="form-contact__button js-contact-submit js-button-captcha" disabled>Quero construir com a Viggas</button>
+                </div>
+                {% include "elements/recaptcha", key: settings.data[0].recaptcha %}
+            </form>
+        </div>
+    </div>
+</div>

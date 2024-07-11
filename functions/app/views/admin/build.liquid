@@ -1,0 +1,19 @@
+{% layout 'layouts/admin' %}
+{% block content %}
+
+<div class="admin__container">
+    <h1 class="default-title admin__title">Como Atuamos</h1>
+
+    <!-- Formulario Como Atuamos -->
+    <form action="/admin/build" method="POST" class="form-default mb-5">
+        <div class="row mb-3">
+            <div class="col-12">
+                <textarea id="buildText" name="buildText">
+                    {{ fields.text }}
+                </textarea>
+            </div>
+        </div>
+        <button type="submit" class="form-default__button default-button">Salvar</button>
+    </form>
+</div>
+{% endblock %}

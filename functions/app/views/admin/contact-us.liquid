@@ -1,0 +1,37 @@
+{% if data.contact.size > 0 %}
+    <h2 class="default-title admin__title">Contato</h2>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Nome Completo</th>
+                <th>Organização</th>
+                <th>E-mail</th>
+                <th>Telefone</th>
+                <th>Mensagem</th>
+                <th>Data</th>
+                <th>Lido</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contact in data.contact %}
+                <tr>
+                    <th>{{ contact.name }}</th>
+                    <th>{{ contact.org }}</th>
+                    <th>{{ contact.email }}</th>
+                    <th>{{ contact.telefone }}</th>
+                    <th>{{ contact.mensagem }}</th>
+                    <th>{{ contact.inclusao }}</th>
+                    <td>
+                        <a href="/admin/contact-read/{{ contact.id  }}" class="btn btn-success">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        </table>
+    </div>
+{% else %}
+    <h2 class="default-title admin__title text-center">Nenhum contato!</h2>
+{% endif %}

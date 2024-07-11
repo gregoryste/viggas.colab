@@ -1,0 +1,172 @@
+{% layout 'layouts/admin' %}
+{% block content %}
+
+<div class="admin__container">
+    <form action="/admin/configuracoes" method="POST" class="form-default" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-12 col-lg-3">
+                <h2 class="default-subtitle">Logo</h2>
+                <div class="form-default__item">
+                    <input type="file" name="img" id="img" accept="image/*">
+                </div>
+                {% if config.logo and config.logo != "" %}
+                    <div class="form-default__item form-default__container-img">
+                        <img src="{{ config.logo }}" alt="Logo" class="form-default__image" width="100%" height="100%" loading="lazy">
+                    </div>
+              {% endif %}
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="default-subtitle">Rodapé</h2>
+                        <div class="form-default__item">
+                            <input type="text" name="telefone" class="form-default__input" placeholder="Telefone: " value="{{ settings.data[0].telefone }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-default__item">
+                            <input type="email" name="email" class="form-default__input" placeholder="E-mail: " value="{{ settings.data[0].email }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-default__item">
+                            <input type="text" name="local" class="form-default__input" placeholder="Local: " value="{{ settings.data[0].local }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <h2 class="default-subtitle">Google Recaptcha</h2>
+                <div class="form-default__item">
+                    <input type="text" name="recaptcha" class="form-default__input" placeholder="Chave: " value="{{ settings.data[0].recaptcha }}">
+                </div>
+            </div>
+            <div class="col-12 col-lg-3">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="default-subtitle">Redes Sociais</h2>
+                        <div class="form-default__item">
+                            <input type="text" name="instagram" class="form-default__input" placeholder="Instragram: " value="{{ settings.data[0].instagram }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-default__item">
+                            <input type="text" name="facebook" class="form-default__input" placeholder="Facebook: " value="{{ settings.data[0].facebook }}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div class="form-default__item">
+                            <input type="text" name="linkedin" class="form-default__input" placeholder="Linkedin: " value="{{ settings.data[0].linkedin }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-lg-3">
+                <h2 class="default-subtitle">Logo Rodapé</h2>
+                <div class="form-default__item">
+                    <input type="file" name="img_footer" id="img_footer" accept="image/*">
+                </div>
+
+                {% if settings.logo_footer and settings.logo_footer != "" %}
+                    <div class="form-default__item form-default__container-img">
+                        <img src="{{ settings.logo_footer }}" alt="Logo Logo Rodapé" class="form-default__image" width="100%" height="100%" loading="lazy">
+                    </div>
+              {% endif %}
+            </div>
+            <div class="col-12 col-lg-3">
+                <h2 class="default-subtitle">Imagem de Fundo Home:</h2>
+                <div class="form-default__item">
+                    <input type="file" name="img_home" id="img_home" accept="image/*">
+                </div>
+                {% if settings.img_home.size > 0 and settings.img_home != "" %}
+                    <div class="form-default__item form-default__container-img">
+                        <img src="{{ settings.img_home }}" alt="Background Home" class="form-default__image" width="100%" height="100%" loading="lazy">
+                    </div>
+              {% endif %}
+            </div>
+            <div class="col-12 col-lg-3">
+                <h2 class="default-subtitle">Vídeo de Fundo Home:</h2>
+                <div class="form-default__item">
+                    <input type="file" name="video_home" id="video_home" accept="video/*">
+                </div>
+                {% if settings.video_home.size > 0 and settings.video_home != "" %}
+                <a href="/admin/configuracoes/delete-video" class="settings__link-remove">Remover Video</a>
+            {% endif %}
+            </div>
+            <div class="col-12 col-lg-3">
+                <h2 class="default-subtitle">LGPD:</h2>
+                <div class="form-default__form-checkbox">
+                    <label class="form-default__accept-label">
+                        Exibir Política de Privacidade
+                        <input type="checkbox" name="checkbox_politica_de_privacidade" class="form-default__accept-input"
+                        {% if settings.data[0].checkbox_politica_de_privacidade != "" %}checked{% endif %}>
+                        <span class="form-default__accept-span"></span>
+                    </label>
+                </div>
+                <div class="form-default__form-checkbox">
+                    <label class="form-default__accept-label">
+                        Exibir Termos de Uso
+                        <input type="checkbox" name="checkbox_codigo_de_conduta" class="form-default__accept-input"
+                        {% if settings.data[0].checkbox_codigo_de_conduta != "" %}checked{% endif %}>
+                        <span class="form-default__accept-span"></span>
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selos -->
+
+        <h2 class="default-subtitle">Selos</h2>
+        <div class="row">
+            <div class="col-12 col-lg-4">
+            <div class="form-default__item">
+                <div class="form-default__container-exp">
+                    <label for="img" class="form-default__label">Imagem:</label>
+                </div>
+                <input type="file" name="img-selo" id="img-selo" accept="image/*">
+            </div>
+            <div class="form-default__item">
+                <input type="text" name="linkSelo" class="form-default__input" placeholder="Link: " value="">
+            </div>
+        </div>
+            <div class="table-viggas table-responsive-md col-12 col-lg-7 offset-lg-1 mt-5 mt-lg-0">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                        <th>Imagens</th>
+                        <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for selo in selos %}
+                            <tr>
+                                <th>
+                                    {% if selo.image and selo.image != "" %}
+                                        <div class="form-default__item form-default__container-img">
+                                            <img src="{{ selo.image  }}" alt="Parceiro" class="form-default__image" width="100%" height="100%" loading="lazy">
+                                        </div>
+                                    {% endif %}
+                                </th>
+                                <td>
+                                    <a href="/admin/selo-delete/{{ selo.id }}" type="button" class="btn btn-danger">Excluir</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <button type="submit" class="form-default__button default-button">Salvar</button>
+    </form>
+</div>
+{% endblock %}

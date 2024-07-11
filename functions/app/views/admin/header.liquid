@@ -1,0 +1,92 @@
+<header class="header">
+  <div class="header__container-logo">
+    <a href="/admin" class="header__link-logo">
+      {% if config.logo and config.logo != "" %}
+        <img
+          src="{{ config.logo }}"
+          alt="Logo Viggas"
+          class="header__logo">
+      {% else %}
+        <img
+          src="/images/viggas-brand.webp"
+          alt=""
+          class="header__logo">
+      {% endif %}
+    </a>
+  </div>
+
+  <ul class="header__categories">
+    <li class="header__categories-item">
+      <a
+        href="/admin/reach"
+        class="header__categories-link"
+        title="Alcance">
+        <i class="fa-solid fa-arrow-trend-up header__categories-icon"></i>
+      </a>
+    </li>
+    <li class="header__categories-item">
+      <a
+        href="/admin/build"
+        class="header__categories-link"
+        title="Build">
+        <i class="fa-solid fa-building-user header__categories-icon"></i>
+      </a>
+    </li>
+    <li class="header__categories-item">
+      <a
+        href="/admin/partners"
+        class="header__categories-link"
+        title="Parceiros">
+        <i class="fa-solid fa-handshake header__categories-icon"></i>
+      </a>
+    </li>
+    <li class="header__categories-item">
+      <a
+        href="/admin/viggas"
+        class="header__categories-link"
+        title="Viggas">
+        <i class="fa-regular fa-address-card header__categories-icon"></i>
+      </a>
+    </li>
+    <li class="header__categories-item">
+      <a
+        href="/admin/contato"
+        class="header__categories-link"
+        title="Contato">
+        <i class="fa-regular fa-address-book header__categories-icon"></i>
+      </a>
+    </li>
+    <li class="header__categories-item">
+      <a
+        href="/admin/products"
+        class="header__categories-link"
+        title="Produtos">
+        <i class="fa-brands fa-product-hunt header__categories-icon"></i>
+      </a>
+    </li>
+    <li class="header__categories-item">
+      <a
+        href="/admin/cases"
+        class="header__categories-link"
+        title="Cases">
+        <i class="fa-solid fa-book header__categories-icon"></i>
+      </a>
+    </li>
+    <li class="header__categories-item">
+      <a
+        href="/admin/configuracoes"
+        class="header__categories-link"
+        title="Configurações">
+        <i class="fa-solid fa-gear header__categories-icon"></i>
+      </a>
+    </li>
+    <li class="header__categories-item">
+      <a
+        href="/admin/viggas-page"
+        class="header__categories-link"
+        title="Página Viggas">
+        <span class="header__categories-letter">V</span>
+      </a>
+    </li>
+  </ul>
+</header>
